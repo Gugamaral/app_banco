@@ -85,6 +85,7 @@ if __name__ == '__main__':
                                     else:
                                         print('Não foi possível efetuar o saque.')
 
+                                    
                                     continue
 
                                 # encerra as operações e volta para o menu anterior

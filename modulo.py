@@ -37,6 +37,7 @@ def depositar_valor(saldo, valor):
     return saldo
 
 # função de saque
+
 def sacar_valor(saldo, valor):
     saldo -= valor
     return saldo
