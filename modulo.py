@@ -1,29 +1,42 @@
+
+# importa função de data
 from datetime import date
 
+# função exibir o menu
 def exibir_menu():
-    meses = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outrubro', 'Novembro', 'Dezembro')
     dia = date.today().day
     mes = date.today().month
     ano = date.today().year
 
-    print(f'\n{dia} de {meses[mes - 1]} de {ano}.\n')
+    print(f'\n{'=' * 20} BANCO ANACONDA | {dia}/{mes}/{ano} {'=' * 20}\n')
+    print('1 - Criar conta')
+    print('2 - Entrar na conta')
+    print('3 - Exibir correntistas')
+    print('4 - Excluir conta')
+    print('5 - Encerrar programa')
 
-print(f'{'-'*30} APP CADASTRO SENAIBANK {'-'* 30} \n ')
+# função exibir operações
+def exibir_operacoes():
+    print('\nOPERAÇÕES\n')
+    print('1 - Consultar saldo')
+    print('2 - Depositar valor')
+    print('3 - Sacar valor')
+    print('4 - Voltar')
 
-pessoa = {
+# função exibir dados do correntista
+def exibir_dados(nome, i, saldo):
+    print(f'ID: {i}')
+    print(f'Nome: {nome}')
+    print(f'Agência: 1001')
+    print(f'Conta: 1001{i}')
+    print(f'Saldo: R$ {saldo}')
 
-    'Nome': input('Informe seu nome: '),
-    'CPF': input('Informe seu CPF: '),
-    'RGg': input('Informe seu RG: '),
-    'Data de Nascimento': input('Informe sua data de nascimento: '),
-    'Gênero': input('Informe seu gênero: '),
-    'e-mail': input('Informe seu e-mail: '),
-    'Telefone': input('Informe seu telefone: '),
-    'Profissão': input('Informe sua profissão: '),
-    
-}
+# função de depósito
+def depositar_valor(saldo, valor):
+    saldo += valor
+    return saldo
 
-for chave in pessoa:
-    print(f'{chave}: {pessoa.get(chave)}')
-    break
-
+# função de saque
+def sacar_valor(saldo, valor):
+    saldo -= valor
+    return saldo
